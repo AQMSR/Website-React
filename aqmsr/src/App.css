@@ -1,0 +1,6 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    background-color: darkslategrey;
+}
