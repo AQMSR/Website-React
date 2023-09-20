@@ -4,3 +4,7 @@
     flex: 1 1 auto;
     background-color: darkslategrey;
 }
+
+.App_Header-HomeNav, .App_Header-AboutNav{
+    cursor: pointer;
+}
