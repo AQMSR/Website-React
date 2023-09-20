@@ -6,13 +6,14 @@ import AboutNav from "./components/about_NAV/aboutNav";
 import Home from "./components/home/home";
 import React, {useState} from "react";
 import About from "./components/about/about";
+import ServicesNAV from "./components/services_NAV/servicesNAV";
 
 function App() {
     const [isHomeClicked, setIsHomeClicked] = useState(true)
     const [isAboutClicked, setIsAboutClicked] = useState(false)
     const handleAboutClick = () => {
-        setIsHomeClicked(false)
-        setIsAboutClicked(true)
+        setIsHomeClicked(!isHomeClicked)
+        setIsAboutClicked(!isAboutClicked)
     }
     
     const handleHomeClick = () => {
@@ -30,6 +31,10 @@ function App() {
           
           <div className="App_Header-AboutNav" onClick={handleAboutClick}>
             <AboutNav/>
+          </div>
+          
+          <div>
+              <ServicesNAV/>
           </div>
       </Header>
         </div>
