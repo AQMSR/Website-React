@@ -7,10 +7,15 @@ import Home from "./components/home/home";
 import React, {useState} from "react";
 import About from "./components/about/about";
 import ServicesNAV from "./components/services_NAV/servicesNAV";
+import ServicesDropdown from "./components/services_Dropdown/servicesDropdown";
 
 function App() {
     const [isHomeClicked, setIsHomeClicked] = useState(true)
     const [isAboutClicked, setIsAboutClicked] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen)
+    }
     const handleAboutClick = () => {
         setIsHomeClicked(!isHomeClicked)
         setIsAboutClicked(!isAboutClicked)
@@ -33,9 +38,17 @@ function App() {
             <AboutNav/>
           </div>
           
-          <div>
+          <div className="App_Header-ServiceNav" onMouseEnter={toggleDropdown}
+               onMouseLeave={toggleDropdown}>
               <ServicesNAV/>
           </div>
+          {isDropdownOpen &&
+              (
+                  <div className="dropdown-content">
+                  <ServicesDropdown/>
+                  </div>
+              )
+          }
       </Header>
         </div>
         <div>
