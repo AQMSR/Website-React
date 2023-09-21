@@ -8,11 +8,13 @@ import React, {useState} from "react";
 import About from "./components/about/about";
 import ServicesNAV from "./components/services_NAV/servicesNAV";
 import ServicesDropdown from "./components/services_Dropdown/servicesDropdown";
+import Service1 from "./components/service1/service1";
 
 function App() {
     const [isHomeClicked, setIsHomeClicked] = useState(true)
     const [isAboutClicked, setIsAboutClicked] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [selectedService, setSelectedService] = useState(null)
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen)
     }
@@ -24,6 +26,10 @@ function App() {
     const handleHomeClick = () => {
         setIsHomeClicked(true)
         setIsAboutClicked(false)
+    }
+    
+    const handleServiceClick = (service) =>{
+        setSelectedService(service)
     }
   return (
     <div className="App">
@@ -45,7 +51,7 @@ function App() {
           {isDropdownOpen &&
               (
                   <div className="dropdown-content" onMouseLeave={toggleDropdown}>
-                  <ServicesDropdown/>
+                  <ServicesDropdown onServiceClick={handleServiceClick}/>
                   </div>
               )
           }
@@ -53,7 +59,11 @@ function App() {
         </div>
         <div>
             {isAboutClicked?<About/> : <Home/>}
+            {selectedService === 'service1' && (
+              <Service1/>
+            )}
         </div>
+        
         
         
         

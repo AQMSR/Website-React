@@ -1,10 +1,10 @@
 import './servicesDropdown.css'
 
-function servicesDropdown(){
+function servicesDropdown({onServiceClick}){
     return(
         <div className="serviceDropdown-container">
             <ul>
-                <li>Service 1</li>
+                <li onClick={() => onServiceClick('service1')}>Service 1</li>
                 <li>Service 2</li>
                 <li>Service 3</li>
                 <li>Service 4</li>
