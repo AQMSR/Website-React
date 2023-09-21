@@ -39,12 +39,12 @@ function App() {
           </div>
           
           <div className="App_Header-ServiceNav" onMouseEnter={toggleDropdown}
-               onMouseLeave={toggleDropdown}>
+               >
               <ServicesNAV/>
           </div>
           {isDropdownOpen &&
               (
-                  <div className="dropdown-content">
+                  <div className="dropdown-content" onMouseLeave={toggleDropdown}>
                   <ServicesDropdown/>
                   </div>
               )
