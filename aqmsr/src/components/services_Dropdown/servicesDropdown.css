@@ -1,0 +1,14 @@
+.serviceDropdown-container{
+    background-color: black;
+    color: ghostwhite;
+}
+
+ul{
+    list-style: none;
+}
+
+.serviceDropdown-container li:hover{
+    background-color: ghostwhite;
+    color: black;
+    cursor: pointer;
+}

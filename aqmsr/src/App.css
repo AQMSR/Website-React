@@ -1,0 +1,15 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    background-color: darkslategrey;
+}
+
+.App_Header-HomeNav, .App_Header-AboutNav, .App_Header-ServiceNav{
+    cursor: pointer;
+}
+
+.App_Header-ServiceNav{
+    position: relative;
+    display: inline-block;
+}
