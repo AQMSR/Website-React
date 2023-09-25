@@ -1,0 +1,21 @@
+.hero_container{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.hero_container-img{
+    height: 50vh;
+    width: 50vw;
+    background: blue;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.hero_container-content{
+    background: deepskyblue;
+    color: white;
+    max-width: 50vw;
+    height: 50vh;
+}

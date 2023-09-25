@@ -10,6 +10,10 @@ import ServicesNAV from "./components/services_NAV/servicesNAV";
 import ServicesDropdown from "./components/services_Dropdown/servicesDropdown";
 import Service1 from "./components/service1/service1";
 import FooterAbout from "./components/footer/footer_about/footerAbout";
+import FooterContact from "./components/footer/footer_contact/footerContact";
+import FooterServices from "./components/footer/footer_services/footerServices";
+import Hero from "./components/hero/hero";
+
 
 
 function App() {
@@ -57,7 +61,8 @@ function App() {
           </div>
           {isDropdownOpen &&
               (
-                  <div className="dropdown-content" onMouseLeave={toggleDropdown}>
+                  <div className="dropdown-content"
+                       onClick={handleServiceOpen} onMouseLeave={toggleDropdown}>
                   <ServicesDropdown onServiceClick={handleServiceClick} />
                   </div>
               )
@@ -65,13 +70,25 @@ function App() {
       </Header>
         </div>
         <div>
-            {isAboutClicked?<About/> : <Home/>}
-            {selectedService === 'service1' &&(
-              <Service1/>
-            )}
+            <Hero/>
         </div>
-        <footer>
+        <div>
+            {isAboutClicked?<About/> : <Home/>}
+            
+                {selectedService === 'service1' && isServiceOpen && (
+                    <Service1/>
+                )}
+            
+                {selectedService === 'service2' && isServiceOpen && (
+                <h3>Service 2!</h3>
+                )}
+            
+            
+        </div>
+        <footer className="App_Footer">
             <FooterAbout/>
+            <FooterContact/>
+            <FooterServices/>
         </footer>
         
     </div>
